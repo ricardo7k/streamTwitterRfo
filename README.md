@@ -2,7 +2,9 @@
 
 ## Install
 * Install Node.js
-* npm install
+```
+npm install
+```
 
 ## App Twitter
 * Criar [App no Twitter](https://apps.twitter.com/app/new)
