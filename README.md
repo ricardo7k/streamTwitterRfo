@@ -1,4 +1,4 @@
-# streaTwitterRfo
+# streamTwitterRfo
 
 ## Install
 * Install Node.js
