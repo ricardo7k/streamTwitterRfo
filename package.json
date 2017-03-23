@@ -1,0 +1,28 @@
+{
+  "name": "streamTwitterRfo",
+  "version": "1.0.0",
+  "main": "stream.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "stream",
+    "twitter",
+    "hashtag"
+  ],
+  "author": "Cacá Ferreira",
+  "license": "ISC",
+  "dependencies": {
+    "twitter": "^1.7.0",
+  },
+  "description": "Stream Twitter pegando #",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricardo7k/streamTwitterRfo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ricardo7k/streamTwitterRfo/issues"
+  },
+  "homepage": "https://github.com/ricardo7k/streamTwitterRfo#readme",
+  "devDependencies": {}
+}
