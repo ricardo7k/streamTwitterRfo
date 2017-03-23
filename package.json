@@ -13,7 +13,7 @@
   "author": "Cacá Ferreira",
   "license": "ISC",
   "dependencies": {
-    "twitter": "^1.7.0",
+    "twitter": "^1.7.0"
   },
   "description": "Stream Twitter pegando #",
   "repository": {
