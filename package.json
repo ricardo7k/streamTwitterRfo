@@ -15,7 +15,7 @@
   "dependencies": {
     "twitter": "^1.7.0"
   },
-  "description": "Stream Twitter pegando #",
+  "description": "Stream Twitter filtro por texto",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ricardo7k/streamTwitterRfo.git"
