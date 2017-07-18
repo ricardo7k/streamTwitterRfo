@@ -19,7 +19,7 @@ client.stream('statuses/filter', {
         tweet.text, 
         tweet.retweeted_status?tweet.retweeted_status.id:null,
         tweet.retweeted_status?tweet.retweeted_status.retweet_count:0,
-        tweet.retweeted_status?tweet.retweeted_status.favorite_count:0,
+        tweet.retweeted_status?tweet.retweeted_status.favorite_count:0
       );
     });
     stream.on('error', function(error) {
