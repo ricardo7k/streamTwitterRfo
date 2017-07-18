@@ -26,11 +26,11 @@ var client = new Twitter({
 //   }
 // );
 
-client.get('statuses/show', {
+client.stream('statuses/show', {
    id: '887335539036217344'
   },
   function(err, data) {
-    console.log(data);
+    console.log(data.retweet_count, data.favorite_count);
   },
   function(err, data) {
     console.log("'"+err+"'");
