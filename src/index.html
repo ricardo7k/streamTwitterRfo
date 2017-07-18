@@ -1,0 +1,103 @@
+<html>
+ <head>
+   <style>
+     body { margin:0;  }
+   </style>    
+ </head>
+ <body>
+  <input type="button" id="btConnect" value="Connect" />
+  <div id="div1"></div>
+  <script src="js/puck.js"></script>
+  <script type="text/javascript">
+    var btConnect = document.getElementById("btConnect");
+    var connection;
+    btConnect.addEventListener("click", function() {
+      if (connection) {
+        connection.close();
+        connection = undefined;
+      }
+      onLine = function(v) {
+        v = JSON.stringify(v.split("\b").join("").split("\r\n>").join(""));
+        console.log("Received: " + v);
+        rfo.Loader.params = { value: v }
+        rfo.Loader.call("/save");
+      }
+      Puck.connect(function(c) {
+        if (!c) {
+          alert("Couldn't connect!");
+          return;
+        }
+        connection = c;
+        var buf = "";
+        connection.on("data", function(d) {
+          onLine(d);
+        });
+      });
+    });
+    //SAVER
+    var rfo = function(selector) {
+      this.selector = selector || null;
+      this.element = this.el = null;
+      this.elements = this.elmts = this.els = null;
+      this.objects = this.objs = [];
+    };
+    rfo.Loader = {
+      params: {},
+      method: "GET",
+      xhr: "",
+      url: "",
+      callback: {
+          error: function(s) { console.info(s) },
+          done: function(s) { console.info(s) }
+      },
+      dataURLtoBlob: function(dataURL)
+      {
+        var binary = atob(dataURL.split(',')[1]);
+        var array = [];
+        for(var i = 0; i < binary.length; i++) {
+          array.push(binary.charCodeAt(i));
+        }
+        return new Blob([new Uint8Array(array)], {type: 'image/png'});
+      },
+      getXHR: function() {
+        if (window.XMLHttpRequest) {
+          return new window.XMLHttpRequest;
+        } else {
+          try {
+              return new ActiveXObject("Microsoft.XMLHTTP");
+          } catch (ex) {
+              return null;
+          }
+        }
+      },
+      handler: function() {
+        if (rfo.Loader.xhr.readyState == 4) {
+          if (rfo.Loader.xhr.status == 200) {
+            rfo.Loader.callback.done(rfo.Loader.xhr);
+          } else {
+            rfo.Loader.callback.error("ErrorLoad(#002) - " + rfo.Loader.xhr + " , " + rfo.Loader.xhr.status);
+          }
+        }
+      },
+      call: function($url)
+      {
+        this.url = $url;
+        this.xhr = this.getXHR();
+        if (this.xhr != null) {
+          var paramsString = "rnd=" + Math.random();
+          for (var i in this.params) {
+            if(i) paramsString += "&" + i + "=" + encodeURI(this.params[i]);
+          }
+          this.xhr.open(this.method, this.url + (this.method=="GET"?(this.url.indexOf("?")>0?"&":"?") + paramsString:""), true);
+          this.xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+          var type = this.method=="POST"?paramsString:null;
+          this.xhr.send(type);
+          this.xhr.onreadystatechange = this.handler;
+        } else {
+          this.callback.error("ErrorLoad(#001) - Ajax not supported.");
+        }
+      }
+    }
+  </script>
+ </body>
+</html>

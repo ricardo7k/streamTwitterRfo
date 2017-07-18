@@ -13,7 +13,8 @@
   "author": "Cacá Ferreira",
   "license": "ISC",
   "dependencies": {
-    "twitter": "^1.7.0"
+    "twitter": "^1.7.0",
+    "httpdispatcher": "^2.0.1"
   },
   "description": "Stream Twitter filtro por texto",
   "repository": {
