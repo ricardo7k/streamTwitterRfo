@@ -1,6 +1,6 @@
 var Twitter = require('twitter');
 var fs = require('fs');
-
+var 
 var client = new Twitter({
   consumer_key: "sNmXKysaua0tgTvPvjpVj1eM1",
   consumer_secret: "ZZHxU8emGUPVmDLJlZLY6tMwU2aZwV6DIjVSOpRJleFnMYAeaD",
@@ -10,28 +10,25 @@ var client = new Twitter({
 
 client.stream('statuses/filter', {
     track: 'Test+Stream+React',
-    follow: 3145,
-    replies: 'all'
+    follow: 3145
   },
   function(stream) {
-    var d = new Date();
-    stream.inicial = d.getTime();
     stream.on('data', function(tweet) {
-      console.log(tweet.id, tweet.retweeted_status?tweet.retweeted_status.id:null);
+      console.log(
+        tweet.id,
+        tweet.text, 
+        tweet.retweeted_status?tweet.retweeted_status.id:null,
+        tweet.retweeted_status?tweet.retweeted_status.retweet_count:0,
+        tweet.retweeted_status?tweet.retweeted_status.favorite_count:0,
+      );
     });
     stream.on('error', function(error) {
       console.log(error);
     });
+
   }
 );
 
-// client.stream('statuses/favorites/users', {
-//    id: '877581051345813508'
-//   },
-//   function(err, data) {
-//     console.log(data);
-//   }
-// );
 
 // client.stream('statuses/user_timeline', {
 //    id: '887335539036217344'
