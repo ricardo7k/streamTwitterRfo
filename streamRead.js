@@ -9,11 +9,17 @@ var client = new Twitter({
 });
 
 client.stream('statuses/filter', {
-    track: 'Test Stream React'
+    track: 'Test+Stream+React'
   },
-  function(err, data) {
-    console.log(err);
-    console.log(data);
+  function(stream) {
+    var d = new Date();
+    stream.inicial = d.getTime();
+    stream.on('data', function(tweet) {
+      console.log(tweet);
+    });
+    stream.on('error', function(error) {
+      console.log(error);
+    });
   }
 );
 
