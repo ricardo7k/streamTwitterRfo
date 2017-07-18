@@ -8,15 +8,14 @@ var client = new Twitter({
   access_token_secret: "CRBOxQxbqK78FHB8ok75gpATiXP6Os0IWjdgvlgiSho5u"
 });
 
-// client.get('statuses/user_timeline', {
-//     screen_name: 'ricardo7k',
-//     count: 1
-//   },
-//   function(err, data) {
-//     // console.log("'"+err+"'");
-//     console.log(data);
-//   }
-// );
+client.get('statuses/user_timeline', {
+    screen_name: 'ricardo7k',
+  },
+  function(err, data) {
+    // console.log("'"+err+"'");
+    console.log(data);
+  }
+);
 
 // client.stream('statuses/favorites/users', {
 //    id: '877581051345813508'
@@ -26,10 +25,10 @@ var client = new Twitter({
 //   }
 // );
 
-client.stream('statuses/show', {
-   id: '887335539036217344'
-  },
-  function(err, data) {
-    if(data) console.log(data.retweet_count, data.favorite_count);
-  }
-);
+// client.stream('statuses/user_timeline', {
+//    id: '887335539036217344'
+//   },
+//   function(err, data) {
+//     if(data) console.log(data.retweet_count, data.favorite_count);
+//   }
+// );
