@@ -15,7 +15,7 @@ client.stream('statuses/filter', {
     var d = new Date();
     stream.inicial = d.getTime();
     stream.on('data', function(tweet) {
-      console.log(tweet.retweet_count, tweet.favorite_count);
+      console.log(tweet);
     });
     stream.on('error', function(error) {
       console.log(error);
