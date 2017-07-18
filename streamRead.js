@@ -27,7 +27,7 @@ var client = new Twitter({
 // );
 
 client.get('statuses/show', {
-   id: '877581051345813508'
+   id: '887335539036217344'
   },
   function(err, data) {
     console.log(data);
