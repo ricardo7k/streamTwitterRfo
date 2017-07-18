@@ -9,7 +9,7 @@ var client = new Twitter({
 });
 
 client.stream('statuses/filter', {
-    track: 'ricardo7k'
+    track: 'Test Stream React'
   },
   function(err, data) {
     // console.log("'"+err+"'");
