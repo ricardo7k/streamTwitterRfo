@@ -17,7 +17,7 @@ client.stream('statuses/filter', {
     var d = new Date();
     stream.inicial = d.getTime();
     stream.on('data', function(tweet) {
-      console.log(tweet.id, tweet.retweeted_status);
+      console.log(tweet.id, tweet.retweeted_status?tweet.retweeted_status.id:null);
     });
     stream.on('error', function(error) {
       console.log(error);
