@@ -21,7 +21,7 @@
 <div id="navigate-async">
 <header>
 <h2 id="sub-title">
-1 - 2
+<center>1 - 2</center>
 </h2>
 </header>
 </body>
