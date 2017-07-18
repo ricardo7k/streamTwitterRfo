@@ -33,4 +33,3 @@ client.get('statuses/show', {
     console.log(data);
   }
 );
-);
