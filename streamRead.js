@@ -8,7 +8,7 @@ var client = new Twitter({
   access_token_secret: "CRBOxQxbqK78FHB8ok75gpATiXP6Os0IWjdgvlgiSho5u"
 });
 
-client.get('statuses/filter', {
+client.stream('statuses/filter', {
     track: 'ricardo7k'
   },
   function(err, data) {
