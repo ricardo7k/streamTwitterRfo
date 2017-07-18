@@ -9,13 +9,14 @@ var client = new Twitter({
 });
 
 client.stream('statuses/filter', {
-    track: 'Test+Stream+React'
+    track: 'Test+Stream+React',
+    follow: '3145'
   },
   function(stream) {
     var d = new Date();
     stream.inicial = d.getTime();
     stream.on('data', function(tweet) {
-      console.log(tweet);
+      console.log(tweet.id, tweet.retweet_count, tweet.favorite_count);
     });
     stream.on('error', function(error) {
       console.log(error);
