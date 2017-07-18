@@ -11,15 +11,13 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <title>Stream react</title>
-<script src="/assets/js/rfo.js"></script>
-<script src="/assets/js/index.js"></script>
 <link rel="stylesheet" href="/assets/css/reset.css" type="text/css" charset="utf-8"/>
 <link rel="stylesheet" href="/assets/css/fade.css" type="text/css" charset="utf-8"/>
 <link rel="stylesheet" href="/assets/css/main.css" type="text/css" charset="utf-8"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" type="text/css" charset="utf-8"/>
 </head>
 <body>
-<section id="content" class="opaco">
+<section id="content">
 <div id="navigate-async">
 <header>
 <h2 id="sub-title">
