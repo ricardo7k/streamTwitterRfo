@@ -10,7 +10,8 @@ var client = new Twitter({
 
 client.stream('statuses/filter', {
     track: 'Test+Stream+React',
-    follow: '3145'
+    follow: 3145,
+    replies: 'all'
   },
   function(stream) {
     var d = new Date();
