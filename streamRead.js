@@ -1,6 +1,6 @@
 var Twitter = require('twitter');
 var fs = require('fs');
-var 
+
 var client = new Twitter({
   consumer_key: "sNmXKysaua0tgTvPvjpVj1eM1",
   consumer_secret: "ZZHxU8emGUPVmDLJlZLY6tMwU2aZwV6DIjVSOpRJleFnMYAeaD",
