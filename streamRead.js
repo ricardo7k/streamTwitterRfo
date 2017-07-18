@@ -12,7 +12,7 @@ client.stream('statuses/filter', {
     track: 'Test Stream React'
   },
   function(err, data) {
-    // console.log("'"+err+"'");
+    console.log(err);
     console.log(data);
   }
 );
