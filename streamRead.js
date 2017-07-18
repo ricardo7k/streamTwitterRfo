@@ -31,5 +31,8 @@ client.get('statuses/show', {
   },
   function(err, data) {
     console.log(data);
+  },
+  function(err, data) {
+    console.log("'"+err+"'");
   }
 );
