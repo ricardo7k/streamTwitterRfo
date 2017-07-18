@@ -11,6 +11,9 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <title>Stream react</title>
+<script src="/assets/js/rfo.js"></script>
+<script src="/assets/js/index.js"></script>
+<script src="/assets/js/videoBg.js"></script>
 <link rel="stylesheet" href="/assets/css/reset.css" type="text/css" charset="utf-8"/>
 <link rel="stylesheet" href="/assets/css/fade.css" type="text/css" charset="utf-8"/>
 <link rel="stylesheet" href="/assets/css/main.css" type="text/css" charset="utf-8"/>
